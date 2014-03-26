@@ -1,0 +1,40 @@
+<div ng-controller="controllerPeople">
+
+  <h1>People</h1>
+
+  <form role="form">
+
+      <input type="text" class="form-control" placeholder="Search" ng-model="search" style="margin-top:20px;"/>
+      <div style="margin-top:20px;">
+        <table class="table table-bordered table-condensed table-hover" ng-cloak>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Job</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="person in people | orderBy:'name' | filter:search" ng-class="{'warning': person.enabled == false}">
+              <td><a href="#/people/{{person.id}}">{{person.name}}</a></td>
+              <td>{{person.job}}</td>
+              <td><span ng-class="{'text-danger': person.enabled == false}">{{person.enabled ? 'Enabled' : 'Disabled'}}</span></td>
+              <td>
+                <div class="btn-group">
+                  <a class="btn btn-default" href="#/people-edit/{{person.id}}">
+                    <span class="glyphicon glyphicon-edit"></span>
+                  </a>
+                  <button class="btn btn-default" ng-click="delete(person.id)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,40 @@
+<div ng-controller="controllerAddPerson">
+
+  <h1>Add Person</h1>
+  
+  <form name="formPerson" role="form" ng-submit="submitForm(formPerson.$valid)" novalidate>
+
+    <div class="form-group" ng-class="{ 'has-error' : formPerson.name.$invalid && submitted }">
+      <label for="name">Name *</label>
+      <input id="name" name="name" type="text" class="form-control" placeholder="Name" ng-model="person.name" ng-minlength="3" ng-maxlength="50" required>
+      <p ng-show="formPerson.name.$invalid && submitted" class="help-block text-right">Required.</p>
+      <p ng-show="formPerson.name.$error.minlength && submitted" class="help-block text-right">Still short...</p>
+      <p ng-show="formPerson.name.$error.maxlength && submitted" class="help-block text-right">Name is too long.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="job">Job Title</label>
+      <input id="job" name="job" type="text" class="form-control" placeholder="Job title" ng-model="person.job" ng-maxlength="50">
+      <p ng-show="formPerson.job.$error.maxlength" class="help-block text-right">This job description is too long.</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : formPerson.email.$invalid && submitted }">
+      <label for="email">Email *</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Email" ng-model="person.email" required>
+      <p ng-show="formPerson.email.$invalid && submitted" class="help-block text-right">Enter a valid email address.</p>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="person.enabled" ng-checked="true"/> Enabled
+      </label>
+    </div>
+
+    <div class="pull-right">
+      <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+      <button type="submit" class="btn btn-primary">Done</button>
+    </div>
+
+  </form>
+
+</div>
