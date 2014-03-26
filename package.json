@@ -1,0 +1,9 @@
+{
+    "name": "crudangular",
+    "description": "An Angular CRUD stub, with REST calls on a simple Express server with dummy data",
+    "version": "0.0.1",
+    "repository": "https://github.com/ruinunes/crudangular.git",
+    "dependencies": {
+        "express": "3.x"
+    }
+}
