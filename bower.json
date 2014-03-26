@@ -1,0 +1,26 @@
+{
+  "name": "crudangular",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ruinunes/crudangular",
+  "authors": [
+    "Rui Nunes <imbronze@gmail.com>"
+  ],
+  "description": "Angular CRUD stub",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app/components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "angular": "~1.2.15",
+    "angular-route": "~1.2.15",
+    "angular-resource": "~1.2.15",
+    "angular-animate": "~1.2.15"
+  }
+}
