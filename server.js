@@ -4,7 +4,7 @@
 var express = require('express');
 var people  = require('./routes/people');
 var server  = express();
-var portNumber = 9000;
+var portNumber = process.env.PORT || 9000;
 var baseURL = '/';
 
 server.use(express.json());
